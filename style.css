@@ -136,6 +136,10 @@ body {
   min-height: 100vh;
 }
 
+#map {
+  min-height: 70vh;
+}
+
 .attribution {
   font-size: 11px;
   position: absolute;

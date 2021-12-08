@@ -6,6 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- displays site properly based on user's device -->
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+    crossorigin="" />
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,15 +21,40 @@
 <body>
 
   <main>
-    <h1 class="app-title"> IP Address Tracker
-    </h1>
+    <h1 class="app-title"> IP Address Tracker</h1>
+    <form action="">
+      <input type="text" name="IpFeild" id="IpFeild">
+      <button class="form-button"></button>
+    </form>
+    <div class="info-group">
+      <div class="ip-address-info">
+        <p class="info-secondary-text">IP Address</p>
+        <p class="info-main-text">192.212.174.101</p>
+      </div>
+      <div class="location-info">
+        <p class="info-secondary-text">Location</p>
+        <p class="info-main-text">Brooklyn</p>
+      </div>
+      <div class="timezone-info">
+        <p class="info-secondary-text">Timezone</p>
+        <p class="info-main-text">UTC</p>
+      </div>
+      <div class="isp-info">
+        <p class="info-secondary-text">ISP</p>
+        <p class="info-main-text">SpaceX</p>
+      </div>
+    </div>
+    <div id="map"></div>
   </main>
 
   <footer class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
     Coded by <a href="https://github.com/theyoungthunder">TheYoungThunder</a>.
   </footer>
-
+  <!-- Make sure you put this AFTER Leaflet's CSS -->
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+    crossorigin=""></script>
   <script src="app.js"></script>
 </body>
 
