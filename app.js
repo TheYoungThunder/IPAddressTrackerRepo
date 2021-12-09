@@ -10,6 +10,14 @@ const ispText = document.querySelector(".isp-text");
 let lat = 0;
 let lng = 0;
 
+// customize pin icon look for the map, info here: https://leafletjs.com/reference.html#icon
+var myIcon = L.icon({
+  iconUrl: "./images/icon-location.svg",
+  // iconSize: [38, 95],
+  // iconAnchor: [22, 94],
+  popupAnchor: [-3, -76],
+});
+
 function updateTextFeilds(data) {
   ipText.textContent = data.ip;
   locationText.textContent = `${data.location.city}, ${data.location.country} ${data.location.postalCode}`;
@@ -17,10 +25,12 @@ function updateTextFeilds(data) {
   ispText.textContent = `${data.isp}`;
 }
 
+// info on how to do this here: https://leafletjs.com/examples/quick-start/
 function updateMapLocation(data) {
   lat = data.location.lat;
   lng = data.location.lng;
   map.setView([lat, lng], 13);
+  L.marker([lat, lng], { icon: myIcon }).addTo(map);
 }
 // fetch device ip and location
 function getIP(ip = "") {
