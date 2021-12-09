@@ -1,9 +1,58 @@
 console.log("app.js is running");
 
+const ipForm = document.querySelector("form");
+const ipFormFeild = document.querySelector(".ip-feild");
+const ipText = document.querySelector(".ip-text");
+const locationText = document.querySelector(".location-text");
+const timezoneText = document.querySelector(".timezone-text");
+const ispText = document.querySelector(".isp-text");
+
+let lat = 0;
+let lng = 0;
+
+function updateTextFeilds(data) {
+  ipText.textContent = data.ip;
+  locationText.textContent = `${data.location.city}, ${data.location.country} ${data.location.postalCode}`;
+  timezoneText.textContent = `GMT${data.location.timezone}`;
+  ispText.textContent = `${data.isp}`;
+}
+
+function updateMapLocation(data) {
+  lat = data.location.lat;
+  lng = data.location.lng;
+  map.setView([lat, lng], 13);
+}
+// fetch device ip and location
+function getIP(ip = "") {
+  axios
+    .get(
+      `https://geo.ipify.org/api/v2/country,city?apiKey=at_9XiPjFZdPrj6q1dOBStUH0wvFktvK&ipAddress=${ip}`
+    )
+    .then((res) => {
+      updateTextFeilds(res.data);
+      updateMapLocation(res.data);
+      console.log("axios call success");
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+}
+
+// this is for the first time the page is loaded
+// getIP();
+
+// get feild value from form
+ipForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  getIP((ip = ipFormFeild.value));
+});
+
 // code coming from leafletjs api
 // https://leafletjs.com/examples/quick-start/
 
-var map = L.map("map").setView([51.505, -0.09], 13);
+var map = L.map("map", {
+  zoomControl: false,
+}).setView([lat, lng], 13);
 L.tileLayer(
   "https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}",
   {

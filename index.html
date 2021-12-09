@@ -15,7 +15,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
   <title>IP Address Tracker</title>
-
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </head>
 
 <body>
@@ -23,25 +23,25 @@
   <main>
     <h1 class="app-title"> IP Address Tracker</h1>
     <form action="">
-      <input class="ip-feild" type="text" name="IpFeild" id="IpFeild">
+      <input class="ip-feild" type="text" name="IpFeild" id="IpFeild" autocomplete="off">
       <button class="form-button"></button>
     </form>
     <div class="info-group">
       <div class="ip-address-info info-element">
         <p class="info-secondary-text">IP Address</p>
-        <p class="info-main-text">192.212.174.101</p>
+        <p class="info-main-text ip-text">192.212.174.101</p>
       </div>
       <div class="location-info info-element">
         <p class="info-secondary-text">Location</p>
-        <p class="info-main-text">Brooklyn</p>
+        <p class="info-main-text location-text">Brooklyn</p>
       </div>
       <div class="timezone-info info-element">
         <p class="info-secondary-text">Timezone</p>
-        <p class="info-main-text">UTC</p>
+        <p class="info-main-text timezone-text">UTC</p>
       </div>
       <div class="isp-info info-element">
         <p class="info-secondary-text">ISP</p>
-        <p class="info-main-text">SpaceX</p>
+        <p class="info-main-text isp-text">SpaceX</p>
       </div>
     </div>
     <div id="map"></div>
@@ -49,7 +49,7 @@
 
   <footer class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
-    Coded by <a href="https://github.com/theyoungthunder">TheYoungThunder</a>.
+    Coded by <a href="https://github.com/TheYoungThunder">TheYoungThunder</a>.
   </footer>
   <!-- Make sure you put this AFTER Leaflet's CSS -->
   <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
