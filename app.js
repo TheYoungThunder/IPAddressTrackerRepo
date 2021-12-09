@@ -51,11 +51,18 @@ function getIP(ip = "") {
 // this is for the first time the page is loaded
 getIP();
 
+// ############################## EVENT LISTENERS #################################################
 // get feild value from form
 ipForm.addEventListener("submit", (e) => {
   e.preventDefault();
   getIP((ip = ipFormFeild.value));
 });
+// window.addEventListener("resize", () => {
+//   if (window.innerWidth >= 480) {
+//     map.attributionControl._map.options.zoomControl = true;
+//     console.log("window resize code ran");
+//   }
+// });
 
 // code coming from leafletjs api
 // https://leafletjs.com/examples/quick-start/

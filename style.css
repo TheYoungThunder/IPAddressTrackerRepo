@@ -211,10 +211,10 @@ form {
 }
 
 #map {
-  height: 70vh;
+  height: calc(100vh - 250px);
   min-width: 100vw;
   position: absolute;
-  top: 30%;
+  top: 250px;
   z-index: 0;
 }
 
@@ -228,7 +228,10 @@ form {
   color: hsl(228, 45%, 44%);
 }
 
-@media (min-width: 480px) {
+@media (min-width: 992px) {
+  body {
+    background-repeat: round;
+  }
   form {
     width: 40vw;
   }
@@ -240,10 +243,10 @@ form {
   .info-element {
     box-sizing: border-box;
     width: 25%;
-    border-right: 1px solid var(--DarkGray);
+    border-left: 1px solid var(--DarkGray);
     padding: 15px;
   }
-  .info-element:nth-last-child(1) {
+  .info-element:nth-child(1) {
     border: none;
   }
   .info-main-text {
