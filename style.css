@@ -134,10 +134,87 @@ html,
 body {
   font-family: "Rubik", sans-serif;
   min-height: 100vh;
+  background-image: url(./images/pattern-bg.png);
+  background-repeat: no-repeat;
+}
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.app-title {
+  font-size: 1.5em;
+  margin: 1em auto;
+  font-weight: 500;
+  color: whitesmoke;
+}
+form {
+  box-sizing: border-box;
+  width: 85vw;
+  display: flex;
+  margin: 0 auto;
+}
+.ip-feild {
+  flex-grow: 1;
+  box-sizing: border-box;
+  border-radius: 15px 0 0 15px;
+  border: 0;
+  padding: 0 0 0 15px;
+  font-size: 1rem;
+  font-weight: 500;
+}
+.ip-feild:focus {
+  border: 0;
+  outline: 0;
+}
+.form-button {
+  box-sizing: border-box;
+  min-width: 15%;
+  background-color: black;
+  color: whitesmoke;
+  border: 0;
+  background-image: url(./images/icon-arrow.svg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 50px;
+  border-radius: 0 10px 10px 0;
+}
+.info-group {
+  background-color: white;
+  width: 85vw;
+  box-sizing: border-box;
+  margin: 1em 0;
+  display: flex;
+  flex-direction: column;
+  z-index: 3;
+  padding: 1em;
+  border-radius: 15px;
+  text-align: center;
+  max-height: none;
+}
+.info-element {
+  margin: 5px 0;
+}
+.info-main-text {
+  font-weight: 500;
+  text-transform: capitalize;
+  font-size: 1.25rem;
+}
+.info-secondary-text {
+  color: var(--DarkGray);
+  text-transform: uppercase;
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
+  font-weight: 700;
+  margin-bottom: 5px;
 }
 
 #map {
-  min-height: 70vh;
+  height: 70vh;
+  min-width: 100vw;
+  position: absolute;
+  top: 30%;
+  z-index: 0;
 }
 
 .attribution {
