@@ -49,7 +49,7 @@ function getIP(ip = "") {
 }
 
 // this is for the first time the page is loaded
-// getIP();
+getIP();
 
 // get feild value from form
 ipForm.addEventListener("submit", (e) => {
